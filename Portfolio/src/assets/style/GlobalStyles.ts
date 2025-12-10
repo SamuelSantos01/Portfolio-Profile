@@ -3,108 +3,119 @@
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
-  /* ------------------------------------------- */
-  /* 1. RESET CSS UNIVERSAL (BOX-SIZING, MARGINS, ETC.) */
-  /* ------------------------------------------- */
 
-  *,
-  *::before,
-  *::after {
-    /* Define que padding e border não adicionam tamanho ao elemento */
-    box-sizing: border-box; 
-  }
+/*
+|--------------------------------------------------------------------------
+| 1. RESET CSS UNIVERSAL
+|--------------------------------------------------------------------------
+*/
 
-  * {
-    margin: 0;
-    padding: 0;
-  }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
+* {
+  margin: 0;
+  padding: 0;
+}
 
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
-    max-width: 100%;
-    height: auto;
-    display: block;
-  }
+html:focus-within {
+  scroll-behavior: smooth;
+}
 
-  input,
-  button,
-  textarea,
-  select {
-    font: inherit; /* Garante que elementos de formulário herdem a fonte global */
-  }
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
 
-  ul, ol {
-    list-style: none;
-  }
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
 
-  /* ------------------------------------------- */
-  /* 2. ESTILOS BASE APLICADOS PELO TEMA */
-  /* ------------------------------------------- */
-  
-  body {
-    /* Cores e Tipografia do Theme Provider */
-    background-color: ${(props) => props.theme.colors.background};
-    color: ${(props) => props.theme.colors.text};
-    font-family: ${(props) => props.theme.typography.fontFamily};
-    font-size: ${(props) => props.theme.typography.fontSizeBase};
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
 
-    min-height: 100vh;
-    line-height: 1.5;
-    margin: 0;
-    min-width: 320px;
-    
-    font-weight: 400;
-    font-synthesis: none;
-    text-rendering: optimizeLegibility;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-  /* Estilos para H1 */
-  h1 {
-    font-size: 3.2em;
-    line-height: 1.1;
-  }
+ul, ol {
+  list-style: none;
+}
 
-  /* Estilos para Links */
-  a {
-    font-weight: 500;
-    color: ${(props) => props.theme.colors.primary};
-    text-decoration: none;
-    transition: color 0.25s;
-  }
+/*
+|--------------------------------------------------------------------------
+| 2. VARIÁVEIS CSS GLOBAIS (:root) E TIPOGRAFIA (LIGHT MODE)
+|--------------------------------------------------------------------------
+*/
 
-  a:hover {
-    color: ${(props) => props.theme.colors.secondary};
-  }
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 
-  /* Estilos para Botões (Default Button Style) */
-  button {
-    border-radius: 8px;
-    border: 1px solid transparent;
-    padding: 0.6em 1.2em;
-    font-size: 1em;
-    font-weight: 500;
-    font-family: inherit;
-    background-color: ${(props) => props.theme.colors.buttonBackground};
-    cursor: pointer;
-    transition: border-color 0.25s;
-    color: ${(props) => props.theme.colors.text};
-  }
+  color: #213547;
+  background-color: #ffffff;
 
-  button:hover {
-    border-color: ${(props) => props.theme.colors.primary};
-  }
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
 
-  button:focus,
-  button:focus-visible {
-    outline: 4px auto -webkit-focus-ring-color;
-  }
+body {
+  margin: 0;
+  min-width: 320px;
+}
+
+a {
+  font-weight: 500;
+  color: #646cff;
+  text-decoration: inherit;
+}
+
+a:hover {
+  color: #747bff;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+button:hover {
+  border-color: #646cff;
+}
+
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
 `;

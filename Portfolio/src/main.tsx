@@ -6,13 +6,16 @@ import { ThemeProvider } from 'styled-components'
 import App from './App'
 import './index.css'
 import { lightTheme } from './assets/style/theme'
+import { GlobalStyles } from './assets/style/GlobalStyles'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <BrowserRouter>
       <ThemeProvider theme={lightTheme}>
-        <App />
+        <GlobalStyles/>
+          <App />
       </ThemeProvider>
     </BrowserRouter>
   </StrictMode>
 )
+ 
