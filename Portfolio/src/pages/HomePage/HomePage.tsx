@@ -1,5 +1,7 @@
-export default function HomePage () {
+import { Hero } from "../../components/hero/index"
+
+export default function HomePage() {
     return (
-        <h1>Welcome to my portfile</h1>
+        <Hero />
     );
 }

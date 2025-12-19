@@ -12,6 +12,7 @@ export interface Theme {
     fontSizeBase: string;
   };
   spacings: {
+    xl: Interpolation<FastOmit<DetailedHTMLProps<HTMLAttributes<HTMLElement>, HTMLElement>, never>>;
     small: string;
     medium: string;
     large: string;
