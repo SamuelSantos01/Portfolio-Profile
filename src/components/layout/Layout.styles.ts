@@ -12,6 +12,4 @@ export const MainContent = styled.main`
   width: 100%;
   max-width: 100%;
   margin: 0;
-  padding-right: 2rem;
-  padding-left: 2rem;
 `;

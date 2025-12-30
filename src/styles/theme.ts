@@ -1,4 +1,3 @@
-// src/assets/styles/theme.ts
 import type { Theme } from '../types/Theme';
 
 export const lightTheme: Theme = {
