@@ -101,26 +101,3 @@ export const LinkMoreInfo = styled.a`
     transform: translateX(5px);
   }
 `
-
-/**
- * Estilizações de componentes internos de HeroWrapperImg
- */
-export const ImageHero = styled.img`
-  width: 100%;
-  height: auto;
-  max-height: 400px;
-  object-fit: contain;
-  border-radius: 12px;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-  transition: transform 0.5s ease;
-  position: relative;
-  z-index: 1;
-  
-  &:hover {
-    transform: scale(1.03);
-  }
-  
-  @media (max-width: 768px) {
-    max-height: 300px;
-  }
-`

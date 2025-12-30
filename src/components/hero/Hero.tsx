@@ -4,11 +4,10 @@ import {
     HeroWrapperImg,
     TitleHero,
     DescriptionHero,
-    LinkMoreInfo,
-    ImageHero
+    LinkMoreInfo
 } from "./Hero.style";
 
-import ImageHeroPng from '../../assets/imgs/dev.png';
+import SoftwareDeveloper from "../lottiefiles/SoftwareDeveloperAnimation";
 
 export function Hero() {
     return (
@@ -18,8 +17,9 @@ export function Hero() {
                 <DescriptionHero>Desenvolvedor full-stack com habilidades na criação de aplicações web escaláveis a diferentes dispositivos. Tenho grande entusiasmo por desenvolver soluções inovadoras que atendem às necessidades reais do usuário e proporcinem uma experência significativa e de alto valor</DescriptionHero>
                 <LinkMoreInfo>Saiba Mais!</LinkMoreInfo>
             </HeroWrapperIntro>
+
             <HeroWrapperImg>
-                <ImageHero src={ImageHeroPng}alt="Descrição"/>
+                <SoftwareDeveloper width={900} height={600} />
             </HeroWrapperImg>
         </HeroContainer>
     );

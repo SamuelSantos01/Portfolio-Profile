@@ -1,5 +1,3 @@
-// src/assets/styles/GlobalStyles.ts
-
 import { createGlobalStyle } from 'styled-components';
 
 export const GlobalStyles = createGlobalStyle`
@@ -29,6 +27,12 @@ body {
   min-height: 100vh;
   text-rendering: optimizeSpeed;
   line-height: 1.5;
+  
+  /* Acessando a estrutura aninhada: theme.colors */
+  background-color: ${({ theme }) => theme.colors.background};
+  color: ${({ theme }) => theme.colors.text};
+  
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 img,
@@ -48,28 +52,18 @@ select {
   font: inherit;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-ul, ol {
-  list-style: none;
-}
-
 /*
 |--------------------------------------------------------------------------
-| 2. VARIÁVEIS CSS GLOBAIS (:root) E TIPOGRAFIA (LIGHT MODE)
+| 2. TIPOGRAFIA E ELEMENTOS (INTEGRADO AO THEME)
 |--------------------------------------------------------------------------
 */
 
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  /* Usando a tipagem de tipografia do tema */
+  font-family: ${({ theme }) => theme.typography.fontFamily};
+  font-size: ${({ theme }) => theme.typography.fontSizeBase};
   line-height: 1.5;
   font-weight: 400;
-
-  color: #213547;
-  background-color: #ffffff;
 
   font-synthesis: none;
   text-rendering: optimizeLegibility;
@@ -84,17 +78,25 @@ body {
 
 a {
   font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
+  text-decoration: none;
+  /* Cor primária definida na sua interface */
+  color: ${({ theme }) => theme.colors.primary};
+  transition: color 0.25s;
 }
 
 a:hover {
-  color: #747bff;
+  color: ${({ theme }) => theme.colors.secondary};
+}
+
+ul, ol {
+  list-style: none;
 }
 
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
+  color: ${({ theme }) => theme.colors.primary};
+  margin-bottom: ${({ theme }) => theme.spacings.medium};
 }
 
 button {
@@ -104,18 +106,20 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #f9f9f9;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: all 0.25s;
+  
+  /* Utilizando buttonBackground e cores do tema */
+  background-color: ${({ theme }) => theme.colors.buttonBackground};
+  color: ${({ theme }) => theme.colors.text};
 }
 
 button:hover {
-  border-color: #646cff;
+  border-color: ${({ theme }) => theme.colors.primary};
 }
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 4px auto ${({ theme }) => theme.colors.primary};
 }
-
 `;
