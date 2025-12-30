@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 
-// Interface para props opcionais
 interface HeaderContainerProps {
   $withShadow?: boolean;
   $isScrolled?: boolean;
@@ -12,14 +11,15 @@ export const HeaderContainer = styled.header<HeaderContainerProps>`
   left: 0;
   right: 0;
   z-index: 1000;
-  background-color: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
   
-  box-shadow: ${({ $withShadow, $isScrolled }) =>
+  background-color: ${({ theme }) => theme.colors.background};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.secondary}40; 
+  
+  box-shadow: ${({ $withShadow, $isScrolled, theme }) =>
     $isScrolled
-      ? '0 4px 20px rgba(0, 0, 0, 0.08)'
+      ? `0 4px 20px ${theme.colors.text}15`
       : $withShadow
-        ? '0 2px 10px rgba(0, 0, 0, 0.05)'
+        ? `0 2px 10px ${theme.colors.text}10`
         : 'none'};
   
   transition: all 0.3s ease;
@@ -37,14 +37,14 @@ export const HeaderWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   height: 100%;
-  padding: 0 2rem;
+  padding: 0 ${({ theme }) => theme.spacings.large};
   
   @media (max-width: 768px) {
-    padding: 0 1.5rem;
+    padding: 0 ${({ theme }) => theme.spacings.medium};
   }
   
   @media (max-width: 480px) {
-    padding: 0 1rem;
+    padding: 0 ${({ theme }) => theme.spacings.small};
   }
 `;
 
@@ -66,12 +66,8 @@ export const HeaderLogo = styled.div`
 export const LogoText = styled.span`
   font-size: 1.75rem;
   font-weight: 700;
-  color: #111827;
-  
-  background: linear-gradient(135deg, #3b82f6, #8b5cf6);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  font-family: ${({ theme }) => theme.typography.fontFamily};
+  color: ${({ theme }) => theme.colors.primary};
   
   @media (max-width: 768px) {
     font-size: 1.5rem;
@@ -81,7 +77,7 @@ export const LogoText = styled.span`
 export const HeaderNav = styled.nav`
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: ${({ theme }) => theme.spacings.large};
   
   @media (max-width: 768px) {
     display: none; 
@@ -90,7 +86,7 @@ export const HeaderNav = styled.nav`
 
 export const NavList = styled.ul`
   display: flex;
-  gap: 2rem;
+  gap: ${({ theme }) => theme.spacings.medium};
   list-style: none;
   margin: 0;
   padding: 0;
@@ -105,17 +101,17 @@ interface NavLinkProps {
 }
 
 export const NavLink = styled.a<NavLinkProps>`
-  color: ${({ $isActive }) => ($isActive ? '#3b82f6' : '#4b5563')};
+  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.accent : theme.colors.text)};
   text-decoration: none;
   font-weight: ${({ $isActive }) => ($isActive ? '600' : '500')};
   font-size: 1rem;
-  padding: 0.5rem 0.75rem;
+  padding: ${({ theme }) => `${theme.spacings.small} ${theme.spacings.medium}`};
   border-radius: 0.5rem;
   transition: all 0.2s ease;
   
   &:hover {
-    color: #3b82f6;
-    background-color: #f3f4f6;
+    color: ${({ theme }) => theme.colors.accent};
+    background-color: ${({ theme }) => theme.colors.secondary}20;
   }
   
   &::after {
@@ -126,7 +122,7 @@ export const NavLink = styled.a<NavLinkProps>`
     transform: translateX(-50%);
     width: ${({ $isActive }) => ($isActive ? '24px' : '0')};
     height: 3px;
-    background: #3b82f6;
+    background: ${({ theme }) => theme.colors.accent};
     border-radius: 2px;
     transition: width 0.3s ease;
   }
@@ -141,8 +137,8 @@ export const MobileMenuButton = styled.button`
   background: none;
   border: none;
   cursor: pointer;
-  padding: 0.5rem;
-  color: #4b5563;
+  padding: ${({ theme }) => theme.spacings.small};
+  color: ${({ theme }) => theme.colors.text};
   
   @media (max-width: 768px) {
     display: flex;
@@ -162,11 +158,11 @@ export const MobileMenuOverlay = styled.div<MobileMenuOverlayProps>`
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: #ffffff;
+  background-color: ${({ theme }) => theme.colors.background};
   z-index: 999;
   flex-direction: column;
-  padding: 2rem;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  padding: ${({ theme }) => theme.spacings.large};
+  box-shadow: 0 10px 25px ${({ theme }) => theme.colors.text}15;
   
   @media (min-width: 769px) {
     display: none;
@@ -176,45 +172,52 @@ export const MobileMenuOverlay = styled.div<MobileMenuOverlayProps>`
 export const MobileNavList = styled.ul`
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacings.medium};
   list-style: none;
   margin: 0;
   padding: 0;
 `;
 
 export const MobileNavLink = styled.a<NavLinkProps>`
-  color: ${({ $isActive }) => ($isActive ? '#3b82f6' : '#4b5563')};
+  color: ${({ $isActive, theme }) => ($isActive ? theme.colors.accent : theme.colors.text)};
   text-decoration: none;
   font-size: 1.25rem;
   font-weight: ${({ $isActive }) => ($isActive ? '600' : '500')};
-  padding: 1rem 1.5rem;
+  padding: ${({ theme }) => theme.spacings.medium};
   border-radius: 0.75rem;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: ${({ theme }) => theme.spacings.medium};
   transition: all 0.2s ease;
   
   &:hover {
-    background-color: #f3f4f6;
-    color: #3b82f6;
+    background-color: ${({ theme }) => theme.colors.secondary}20;
+    color: ${({ theme }) => theme.colors.accent};
   }
 `;
 
 export const ActionMobileContainer = styled.div`
-margin-top: auto;
-display: flex;
-flex-direction: column;
-gap: 1rem;
-`
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: ${({ theme }) => theme.spacings.medium};
+`;
+
 export const ActionMobileButton = styled.button`
-display: flex;
-align-items: center;
-justify-content: center;
-gap: 0.5rem;
-background: none;
-border: 1px solid  #e5e7eb;
-padding: 1rem;
-border-radius: '0.5rem;
-color: '#4b5563;
-cursor: pointer;
-`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: ${({ theme }) => theme.spacings.small};
+  background: none;
+  border: 1px solid ${({ theme }) => theme.colors.secondary};
+  padding: ${({ theme }) => theme.spacings.medium};
+  border-radius: 0.5rem;
+  color: ${({ theme }) => theme.colors.text};
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.secondary}15;
+    border-color: ${({ theme }) => theme.colors.accent};
+  }
+`;

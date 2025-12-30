@@ -19,7 +19,7 @@ export function Hero() {
             </HeroWrapperIntro>
 
             <HeroWrapperImg>
-                <SoftwareDeveloper width={900} height={600} />
+                <SoftwareDeveloper width={2000} height={700} />
             </HeroWrapperImg>
         </HeroContainer>
     );

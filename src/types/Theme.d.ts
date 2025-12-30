@@ -6,6 +6,7 @@ export interface Theme {
     text: string;
     accent: string;   
     buttonBackground: string;
+    white: string;
   };
   typography: {
     fontFamily: string;
