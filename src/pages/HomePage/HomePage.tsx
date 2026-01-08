@@ -2,6 +2,7 @@ import { Hero } from "../../components/hero/index"
 import { Experience } from "../../components/experience/index"
 import { ExperienceContainer } from "./HomePage.styled";
 import { Tools } from "../../components/Tools/Tools";
+import { Projects } from "../../components/Projects";
 
 export default function HomePage() {
     return (
@@ -9,6 +10,7 @@ export default function HomePage() {
             <Hero />
             <Experience />
             <Tools />
+            <Projects />
         </ExperienceContainer>
     );
 }
