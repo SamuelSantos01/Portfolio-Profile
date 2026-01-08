@@ -16,6 +16,8 @@ import {
     MobileNavLink,
 } from './Header.style';
 
+import DeveloperAnimation from "../../lottiefiles/WebDeveloper";
+
 export function Header() {
     const location = useLocation();
     const navigate = useNavigate();
@@ -59,6 +61,7 @@ export function Header() {
                     {/* Logo */}
                     <HeaderLogo onClick={() => handleNavigation('/')}>
                         <LogoText>&lt;Samuel Teixeira/&gt;</LogoText>
+                        <DeveloperAnimation width="100px" height="90px" />
                     </HeaderLogo>
 
                     {/* Navegação Desktop */}
