@@ -10,7 +10,7 @@ export const HeroContainer = styled.section`
   margin: 0;
   min-height: 100vh;
   background-color: ${({ theme }) => theme.colors.background};
-
+  padding-top: 6rem;
   @media (max-width: 968px) {
     flex-direction: column;
     justify-content: center;
@@ -52,9 +52,6 @@ export const HeroWrapperImg = styled.div`
   }
 `;
 
-/**
- * Estilizações de componentes internos de HeroWrapperIntro
- */
 export const TitleHero = styled.h1`
   font-family: ${({ theme }) => theme.typography.fontFamily};
   font-size: 4rem;

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const ExperienceSection = styled.section`
-  background-color: #F2F2F2;${({ theme }) => theme.colors.background};
+  background-color:${({ theme }) => theme.colors.expirenceBackground};
   padding: ${({ theme }) => theme.spacings.large} 0;
   width: 100%;
   min-height: 100vh;

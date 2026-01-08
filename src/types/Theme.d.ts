@@ -7,6 +7,8 @@ export interface Theme {
     accent: string;   
     buttonBackground: string;
     white: string;
+    expirenceBackground: string;
+    cardBackground: string;
   };
   typography: {
     fontFamily: string;
