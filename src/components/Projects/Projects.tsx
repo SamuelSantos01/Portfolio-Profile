@@ -4,7 +4,8 @@ import {
     TitleProjects,
     AnimationContainer,
     DescriptionProjects,
-    ProjectsGrid
+    ProjectsGrid,
+    LinkMoreInfo
 } from "./Projects.style";
 
 import { CardProjectsHome } from "../CardProjectsHome";
@@ -33,34 +34,29 @@ export function Projects() {
                     Title="Sistema de Gestão Tempo"
                     Description="Um sistema completo para gestão de tempo e produtividade com relatórios detalhados."
                     ImageUrl="src/assets/imgs projects/tempo_project.png"
-                    ProjectUrl="/projeto-tempo"
+                    ProjectUrl="https://github.com/SamuelSantos01/Previsao-do-tempo"
                     position={true}
                 />
                 
                 <CardProjectsHome 
-                    Title="E-commerce Plataforma"
-                    Description="Plataforma de e-commerce com carrinho de compras e pagamento integrado."
-                    ImageUrl="src/assets/imgs projects/ecommerce_project.png"
-                    ProjectUrl="/projeto-ecommerce"
+                    Title="Tela de Login"
+                    Description="Página feita em Html e css, apenas para demonstrar habilidades no desenvolvimento frontend.."
+                    ImageUrl="src/assets/imgs projects/login_projetc.png"
+                    ProjectUrl="https://github.com/SamuelSantos01/Tela-de-login"
                     position={false}
                 />
                 
                 <CardProjectsHome 
-                    Title="App de Fitness"
+                    Title="Portifolio Pessoal"
                     Description="Aplicativo móvel para acompanhamento de exercícios e dieta com IA personalizada."
-                    ImageUrl="src/assets/imgs projects/fitness_project.png"
-                    ProjectUrl="/projeto-fitness"
+                    ImageUrl="src/assets/imgs projects/portifolio2.png"
+                    ProjectUrl="https://github.com/SamuelSantos01/Portifolio"
                     position={true}
-                />
-                
-                <CardProjectsHome 
-                    Title="Dashboard Analytics"
-                    Description="Dashboard interativo para visualização de dados em tempo real com gráficos dinâmicos."
-                    ImageUrl="src/assets/imgs projects/dashboard_project.png"
-                    ProjectUrl="/projeto-dashboard"
-                    position={false}
                 />
             </ProjectsGrid>
+
+            <LinkMoreInfo href="https://github.com/SamuelSantos01?tab=repositories">Mais projetos!</LinkMoreInfo>
+
         </ProjectsSection>
     );
 }

@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 interface CardContainerProps {
-  position: boolean;
+  $position: boolean;
 }
 
 export const CardProjectsHomeSection = styled.section<CardContainerProps>`
@@ -12,7 +12,7 @@ export const CardProjectsHomeSection = styled.section<CardContainerProps>`
 
 export const CardContainer = styled.div<CardContainerProps>`
   display: flex;
-  flex-direction: ${({ position }) => position ? 'row' : 'row-reverse'};
+  flex-direction: ${({ $position }) => $position ? 'row' : 'row-reverse'};
   align-items: center;
   justify-content: space-between;
   gap: ${({ theme }) => theme.spacings.large};
@@ -75,17 +75,39 @@ export const CardProjectsHomeDescription = styled.p`
   }
 `;
 
-export const CardProjectsHomeLink = styled.a`
+export const CardProjectsHomeLink = styled.span`
   display: inline-block;
-  padding: ${({ theme }) => theme.spacings.medium} ${({ theme }) => theme.spacings.large};
-  background-color: ${({ theme }) => theme.colors.primary};
   color: #fff;
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
+  font-size: 1rem;
   transition: background-color 0.3s ease;
 
   &:hover {
     background-color: ${({ theme }) => theme.colors.accent};
+  }
+`;
+
+export const CardProjectsHomelogo = styled.img`
+  width: 40px;
+  height: 40px;
+  margin-right: 8px;
+`;  
+
+export const CardDiv = styled.div`
+  display: flex;
+  align-items: center;
+  background-color: #303030;
+  border-radius: 15px;
+  padding: 8px 16px;
+  gap: 10px; 
+  text-decoration: none;
+  color: inherit; 
+  cursor: pointer;
+  transition: background 0.2s;
+
+  &:hover {
+    background-color: #404040;
   }
 `;

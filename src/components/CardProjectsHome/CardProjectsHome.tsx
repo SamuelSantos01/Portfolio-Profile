@@ -6,7 +6,9 @@ import {
     InfoContainer,
     CardProjectsHomeTitle,
     CardProjectsHomeDescription,
-    CardProjectsHomeLink
+    CardProjectsHomeLink,
+    CardDiv,
+    CardProjectsHomelogo
 } from './CardProjectsHome.style';
 
 interface CardProjectsHomeProps {
@@ -25,8 +27,8 @@ export function CardProjectsHome({
     position
 }: CardProjectsHomeProps) {
     return (
-        <CardProjectsHomeSection position={position}>
-            <CardContainer position={position}>
+        <CardProjectsHomeSection $position={position}>
+            <CardContainer $position={position}>
                 <ImageContainer>
                     <CardProjectsHomeImage
                         src={ImageUrl}
@@ -38,13 +40,10 @@ export function CardProjectsHome({
                     <CardProjectsHomeTitle>{Title}</CardProjectsHomeTitle>
                     <CardProjectsHomeDescription>{Description}</CardProjectsHomeDescription>
 
-                    <CardProjectsHomeLink
-                        href={ProjectUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        Ver Projeto
-                    </CardProjectsHomeLink>
+                    <CardDiv as="a" href={ProjectUrl} target="_blank" rel="noopener noreferrer">
+                        <CardProjectsHomelogo src='src/assets/imgs/githubgenericname.png' />
+                        <CardProjectsHomeLink>GitHub</CardProjectsHomeLink>
+                    </CardDiv>
                 </InfoContainer>
             </CardContainer>
         </CardProjectsHomeSection>
