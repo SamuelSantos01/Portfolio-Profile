@@ -4,6 +4,7 @@ import { ExperienceContainer } from "./HomePage.styled";
 import { Tools } from "../../components/Tools/Tools";
 import { Projects } from "../../components/Projects";
 import { Academic } from "../../components/academic";
+import { Contact } from "../../components/contact/Contact";
 
 export default function HomePage() {
     return (
@@ -13,6 +14,7 @@ export default function HomePage() {
             <Tools />
             <Projects />
             <Academic />
+            <Contact />
         </ExperienceContainer>
     );
 }
