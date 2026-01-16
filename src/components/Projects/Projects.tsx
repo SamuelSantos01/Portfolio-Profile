@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"; 
 import {
     ProjectsSection,
     ProjectsHeader,
@@ -12,8 +13,17 @@ import { CardProjectsHome } from "../CardProjectsHome";
 import GradientInfiniteSign from "../lottiefiles/GradientInfiniteSign";
 
 export function Projects() {
+    const navigate = useNavigate(); 
+
+    const handleMoreProjects = (e: React.MouseEvent) => {
+        e.preventDefault();
+        
+        navigate("/projects"); 
+        
+    };
+
     return (
-        <ProjectsSection>
+        <ProjectsSection id="projects"> 
             <ProjectsHeader>
                 <TitleProjects>Meus Projetos</TitleProjects>
                 
@@ -55,7 +65,12 @@ export function Projects() {
                 />
             </ProjectsGrid>
 
-            <LinkMoreInfo href="https://github.com/SamuelSantos01?tab=repositories">Mais projetos!</LinkMoreInfo>
+            <LinkMoreInfo 
+                href="/projects" 
+                onClick={handleMoreProjects}
+            >
+                Mais projetos!
+            </LinkMoreInfo>
 
         </ProjectsSection>
     );

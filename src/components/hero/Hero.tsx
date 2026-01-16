@@ -4,7 +4,7 @@ import {
     HeroWrapperImg,
     TitleHero,
     DescriptionHero,
-    LinkMoreInfo
+    // LinkMoreInfo
 } from "./Hero.style";
 
 import SoftwareDeveloper from "../lottiefiles/SoftwareDeveloperAnimation";
@@ -15,7 +15,7 @@ export function Hero() {
             <HeroWrapperIntro>
                 <TitleHero>Olá, Sou Samuel Desenvolvedor de software e sistemas</TitleHero>
                 <DescriptionHero>Desenvolvedor full-stack com habilidades na criação de aplicações web escaláveis a diferentes dispositivos. Tenho grande entusiasmo por desenvolver soluções inovadoras que atendem às necessidades reais do usuário e proporcinem uma experência significativa e de alto valor</DescriptionHero>
-                <LinkMoreInfo>Saiba Mais!</LinkMoreInfo>
+                {/* <LinkMoreInfo>Saiba Mais!</LinkMoreInfo> */}
             </HeroWrapperIntro>
 
             <HeroWrapperImg>

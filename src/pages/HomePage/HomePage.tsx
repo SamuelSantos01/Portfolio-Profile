@@ -9,12 +9,12 @@ import { Contact } from "../../components/contact/Contact";
 export default function HomePage() {
     return (
         <ExperienceContainer>
-            <Hero />
-            <Experience />
+            <section id="home"><Hero /></section>
+            <section id="experience"><Experience /></section>
             <Tools />
-            <Projects />
-            <Academic />
-            <Contact />
+            <section id="projects"><Projects /></section>
+            <section id="education"><Academic /></section>
+            <section id="contact"><Contact /></section>
         </ExperienceContainer>
     );
 }
