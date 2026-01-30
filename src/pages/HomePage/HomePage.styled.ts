@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ExperienceContainer = styled.section`
+export const PageContainer = styled.section`
   display: flex;
   flex-direction: column;
   margin: 0 ;

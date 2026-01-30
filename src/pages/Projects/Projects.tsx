@@ -1,34 +1,18 @@
+import { 
+    PageContainer,
+    Title,
+    ProjectsWrapper
+} from './Projects.style';
+
+import { CardProject } from '../../components/CardProject';
+
 export function Projects() {
     return (
-        <div>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-            <h1>Hello new page</h1>
-        </div>
+        <PageContainer>
+                <Title>Projetos</Title>
+                <ProjectsWrapper>
+                    <CardProject></CardProject>
+                </ProjectsWrapper>
+        </PageContainer>
     );
 }

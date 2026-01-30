@@ -24,7 +24,6 @@ export function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const [isScrolled, setIsScrolled] = useState(false);
 
-    // AJUSTE: Agora os caminhos incluem a barra '/' para indicar que as seções estão na Home
     const navItems = [
         { id: 'home', label: 'Início', path: '/#home' },
         { id: 'experience', label: 'Experiência', path: '/#experience' },
@@ -45,25 +44,21 @@ export function Header() {
         document.body.style.overflow = isMobileMenuOpen ? 'hidden' : 'unset';
     }, [isMobileMenuOpen]);
 
-    // Lógica de Navegação Ajustada
     const handleNavigation = (path: string) => {
         setIsMobileMenuOpen(false);
 
         if (path.includes('#')) {
             const [route, hash] = path.split('#');
-            
-            // Se eu já estiver na Home, apenas faço o scroll
+
             if (location.pathname === route || (location.pathname === '/' && route === '')) {
                 const element = document.getElementById(hash);
                 if (element) {
                     element.scrollIntoView({ behavior: 'smooth' });
                 }
             } else {
-                // Se estiver em outra página, navego para a Home + Hash
                 navigate(path);
             }
         } else {
-            // Navegação normal para páginas sem #
             navigate(path);
             window.scrollTo({ top: 0, behavior: 'smooth' });
         }
@@ -73,7 +68,7 @@ export function Header() {
         <>
             <HeaderContainer $withShadow $isScrolled={isScrolled}>
                 <HeaderWrapper>
-                    {/* Logo - Clicar volta para o topo da Home */}
+                    {/* Logo */}
                     <HeaderLogo onClick={() => handleNavigation('/#home')}>
                         <LogoText>&lt;Samuel Teixeira/&gt;</LogoText>
                         <DeveloperAnimation width="100px" height="90px" />
@@ -90,7 +85,6 @@ export function Header() {
                                             e.preventDefault();
                                             handleNavigation(item.path);
                                         }}
-                                        // Verifica se o hash atual é o mesmo do item para destacar o menu
                                         $isActive={location.hash === `#${item.id}`}
                                     >
                                         {item.label}
